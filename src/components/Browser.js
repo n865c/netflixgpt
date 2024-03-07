@@ -11,7 +11,7 @@ const Browser = () => {
         signOut(auth).then(() => {
             navigate('/login')
         }).catch((error) => {
-            alert("unable to  sign out ");
+            alert("unable to  sign out  ");
         });
     }
     return (
