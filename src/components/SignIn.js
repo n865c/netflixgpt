@@ -41,7 +41,7 @@ const SignIn = () => {
                     
                     const user = userCredential.user;
                     updateProfile(user, {
-                        displayName: name.current.value, photoURL: "https://example.com/jane-q-user/profile.jpg"
+                        displayName: name.current.value, photoURL: name.current.value[0].toUpperCase(),
                     }).then(() => {
                         const { uid, email, photoURL, displayName } = auth.currentUser;
                         dispath(addUser({ uid: uid, email: email, photoURL: photoURL, displayName: displayName }))
