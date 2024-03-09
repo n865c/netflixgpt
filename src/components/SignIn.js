@@ -44,7 +44,7 @@ const SignIn = () => {
                     }).then(() => {
                         const { uid, email, photoURL, displayName } = auth.currentUser;
                         dispath(addUser({ uid: uid, email: email, photoURL: photoURL, displayName: displayName }))
-                        navigate('/browser')
+                        // navigate('/browser')
                     }).catch((error) => {
                         setErrorpass(error.message);
                     });
@@ -68,7 +68,7 @@ const SignIn = () => {
                     }).then(() => {
                         const { uid, email, photoURL, displayName } = auth.currentUser;
                         dispath(addUser({ uid: uid, email: email, photoURL: photoURL, displayName: displayName }));
-                        navigate('/browser')
+                        // navigate('/browser')
                     }).catch((error) => {
                         setErrorpass(error.message);
                     });
