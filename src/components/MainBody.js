@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import BodyPart1 from './Body/BodyPart1'
 import Bodypart2 from './Body/Bodypart2'
 import BodyPart3 from './Body/BodyPart3'
 import Bodypart4 from './Body/Bodypart4'
-import Footer from './Footer'
-import SignIn from './SignIn'
 import { useDispatch } from 'react-redux'
 import { EmailSignUp, SignUp } from '../utils/signInSlice'
 import QuestionSection from './Body/QuestionSection'
@@ -14,14 +12,17 @@ import { onAuthStateChanged } from "firebase/auth";
 import { addUser, remove } from '../utils/userSlice'
 const MainBody = () => {
     const dispath = useDispatch();
+    const navigate=useNavigate();
     const [email, setEmail] = useState("");
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 const { uid, email, photoURL, displayName } = user;
                 dispath(addUser({ uid: uid, email: email, photoURL: photoURL, displayName: displayName }));
+                navigate("/browser")
             } else {
                 dispath(remove());
+                navigate("/");
             }
         });
  
@@ -61,7 +62,6 @@ const MainBody = () => {
           <BodyPart3 />
           <Bodypart4 />
           <QuestionSection/>
-          <Footer/>
       </div>
   )
 }
