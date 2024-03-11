@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux'
 import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from "firebase/auth";
+import MainContainer from './MainContainer';
 const Browser = () => {
     const user = useSelector((store) => store.user);
-    const navigate = useNavigate();
     const handleuser = () => {
         
         signOut(auth).then(() => {
@@ -17,13 +17,14 @@ const Browser = () => {
     }
     return (
   <>
-            {user?<div className='flex justify-between'>
-                <div></div>
-                <div className='mr-32 mt-8 z-30 flex gap-10'>
-                <div className='bg-neutral-950 text-white p-2 rounded-full'>{user.photoURL}</div>
+           {user&& 
+           <div className='absolute right-28 z-40'>
+                <div className='mt-8 flex gap-5'>
+                <div className='bg-white font-bold p-2 w-10 text-center rounded-full'>{user.photoURL}</div>
                 <button className='bg-red-600 rounded-md p-2 text-white'onClick={handleuser}>Sign Out</button>
                 </div>
-            </div >:""}
+            </div>}
+            <MainContainer/>
         </>
   )
 }
