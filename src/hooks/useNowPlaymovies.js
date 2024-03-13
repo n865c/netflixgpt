@@ -8,6 +8,7 @@ const useNowPlaymovies=()=>{
     const movidata =async()=>{
         const nowplay=await fetch('https://api.themoviedb.org/3/movie/now_playing?page=1', options);
             const json=await nowplay.json();
+            console.log(json.results);
            dispatch(addNowPlayMovie(json.results));
             }
     useEffect(()=>{

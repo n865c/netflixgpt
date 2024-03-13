@@ -4,6 +4,7 @@ import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from "firebase/auth";
 import MainContainer from './MainContainer';
+import SecondContainer from './SecondContainer';
 const Browser = () => {
     const user = useSelector((store) => store.user);
     const handleuser = () => {
@@ -25,6 +26,7 @@ const Browser = () => {
                 </div>
             </div>}
             <MainContainer/>
+            <SecondContainer/>
         </>
   )
 }

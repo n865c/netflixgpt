@@ -10,7 +10,9 @@ const useTrailer=(id)=>{
         const json=await fetchdata.json();
         console.log(json);
         const movietrailer= json.results;
-        const filtermovie = movietrailer.find((f)=>f.type==="Trailer");
+        let filtermovie = movietrailer.find((f)=>f.type==="Trailer");
+        if(filtermovie===undefined)
+          filtermovie=movietrailer[0];  
          dispatch(addtrailer(filtermovie));
     }
     useEffect(()=>{

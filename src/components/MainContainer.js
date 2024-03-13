@@ -5,6 +5,7 @@ import VideoTrailer from "./VideoTrailer";
 import VideoTitle from "./VideoTitle";
 const MainContainer=()=>{
     useNowPlaymovies();
+    
     const movie=useSelector((store)=>store.movie.nowPlaymovies);
     if(!movie)
     return null;
