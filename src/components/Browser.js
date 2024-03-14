@@ -19,6 +19,7 @@ const Browser = () => {
     return (
   <>
            {user&& 
+           
            <div className='absolute right-28 z-40'>
                 <div className='mt-8 flex gap-5'>
                 <div className='bg-white font-bold p-2 w-10 text-center rounded-full'>{user.photoURL}</div>

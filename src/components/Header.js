@@ -14,9 +14,21 @@ const Header = () => {
     }
   },[])
   return (
+   <>
+   
     <div className='absolute bg-gradient-to-b from-black to-transparent w-full'>
       <img className="w-44 h-20 ml-32 mt-2 "src={ Netflix_LOGO} />
     </div>
+    {user&&<div className='absolute text-white left-80 mt-8 flex gap-5 font-bold'>
+      <div>Home</div>
+      <div>TV shows</div>
+      <div>Movies</div>
+      <div>New & popular</div>
+      <div>My Lists</div>
+      <div>Browse my Language</div>
+      
+    </div>}
+    </>
     
   )
 }

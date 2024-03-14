@@ -2,7 +2,7 @@ const VideoTitle=({title,des,id})=>{
     return (
         <>
         <div className="absolute bg-gradient-to-l from-black text-white w-screen aspect-video ml-20 ">
-            <div className="w-80">
+            <div className="w-96">
             <div className="mt-72 font-bold text-5xl mb-4">{title}</div> 
        <div className=" text-lg font-semibold mb-4"> {des}</div>
        <div className="flex gap-2">

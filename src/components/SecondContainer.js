@@ -6,9 +6,9 @@ const SecondContainer=()=>{
     return (
     
         <div className="bg-black">
-            <div className="-mt-40">
+            <div className="-mt-36">
         <MovieList title={"Now Playing"} movies={movies.nowPlaymovies}/>
-        <MovieList title={"Now Playing"} movies={movies.nowPlaymovies}/>
+        <MovieList title={"Popular movies"} movies={movies.popularmovies}/>
         <MovieList title={"Now Playing"} movies={movies.nowPlaymovies}/>
         <MovieList title={"Now Playing"} movies={movies.nowPlaymovies}/>
         </div>
