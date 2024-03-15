@@ -28,6 +28,7 @@ const Browser = () => {
             </div>}
             <MainContainer/>
             <SecondContainer/>
+            
         </>
   )
 }
